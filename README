@@ -7,6 +7,10 @@ CapistranoMonit is a Capistrano Plugin that adds functionality to setup/configur
 Setup
 =====
 
+Install the plugin:
+
+$ script/plugin install git://github.com/seebq/capistrano_monit.git
+
 CapistranoMonit requires the following variables:
 
 set :domain, "yourserver.com"
