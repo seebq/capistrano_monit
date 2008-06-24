@@ -1,0 +1,36 @@
+CapistranoMonit: A Capistrano Plugin
+====================================
+
+CapistranoMonit is a Capistrano Plugin that adds functionality to setup/configure the control file for monit and adds "restart" functionality to apply those changes.
+
+
+Setup
+=====
+
+CapistranoMonit requires the following variables:
+
+set :domain, "yourserver.com"
+set :mongrel_port, "8000"
+
+CapistranoMonit also allows you to customize the following variables:
+
+set :monit_daemon_interval, "120"
+set :monit_alert_email, "you@example.com"
+
+Simply define them in your capistrano config/deploy.rb.
+
+
+Example
+=======
+
+After installation and adding the appropriate monit variables:
+
+$ cap monit:setup
+$ cap monit:restart
+
+You can even make sure the monit setup gets run after your setup tasks, in your deploy.rb file:
+
+after "servers:setup", "monit:setup"
+
+
+Copyright (c) 2008 Charles Brian Quinn <cbq@highgroove.com>, released under the MIT license
